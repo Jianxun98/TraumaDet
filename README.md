@@ -18,7 +18,9 @@ Pytorch implementation for MICCAI 2024 paper **[Language-enhanced Local-global A
 
 ### Data preparing
 #### 1. Download the RSNA-ATD dataset: https://www.kaggle.com/competitions/rsna-2023-abdominal-trauma-detection/data
-#### 2. Train a segmentation model to obtain all segmentation maps of organs
+#### 2. Transfer multiple 2D dicom images of the same case to 3D Nifti volumes
+python dicom2nii.py
+#### 3. Train a segmentation model to obtain all segmentation maps of organs
 [1] J. Chen, Y. Lu, Q. Yu, X. Luo, E. Adeli, Y. Wang, L. Lu, A. Yuille, and Y. Zhou. Transunet: Transformers make strong
 encoders for medical image segmentation. arXiv preprint arXiv:2102.04306, 2021.
 
