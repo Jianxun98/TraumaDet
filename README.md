@@ -33,6 +33,8 @@ python monai_preprocessing.py
 ```bash
 python crop_to_size.py
 ```
+#### 6. Text Embedding
+
 ### Training
 ```bash
 python GLFF_train.py --model_name local_prompt_global_prompt --alfa 0.9 --prompt_loss True
