@@ -23,12 +23,15 @@ python dicom2nii.py
 #### 3. Train a segmentation model to obtain all segmentation maps of organs
 [1] J. Chen, Y. Lu, Q. Yu, X. Luo, E. Adeli, Y. Wang, L. Lu, A. Yuille, and Y. Zhou. Transunet: Transformers make strong
 encoders for medical image segmentation. arXiv preprint arXiv:2102.04306, 2021.
-
+#### 4. 
+python monai_preprocessing.py
+#### 5. 
+python crop_to_size.py
 
 ### Training
 
 
 ### Testing
 
-## Citation
+## Contact
 For any questions, please contact ‘jianxyu98@gmail.com’
