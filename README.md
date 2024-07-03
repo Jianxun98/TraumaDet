@@ -34,6 +34,10 @@ python monai_preprocessing.py
 python crop_to_size.py
 ```
 #### 6. Text Embedding
+##### Organ-wise Prompt
+
+##### Category-wise Prompt
+
 
 ### Training
 ```bash
