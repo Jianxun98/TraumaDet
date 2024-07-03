@@ -27,10 +27,12 @@ encoders for medical image segmentation. arXiv preprint arXiv:2102.04306, 2021.
 python monai_preprocessing.py
 #### 5. Extract Organ boxes
 python crop_to_size.py
-### Training
 
+### Training
+python GLFF_train.py --model_name local_prompt_global_prompt --alfa 0.9 --prompt_loss True
 
 ### Testing
+python inference_global_local.py --model_name local_prompt_global_prompt
 
 ## Contact
 For any questions, please contact ‘jianxyu98@gmail.com’
