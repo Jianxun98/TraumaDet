@@ -36,6 +36,7 @@ python crop_to_size.py
 ### Preliminary
 #### Pre-train
 Our local vision encoder use pre-trained weights [[link](https://www.dropbox.com/s/lyunaue0wwhmv5w/unet.pth)] in **[CLIP-Driven Universal Model](https://github.com/ljwztc/CLIP-Driven-Universal-Model)**
+
 [2] J. Liu, Y. Zhang, J. Chen, J. Xiao, Y. Lu, B. Landman, Y. Yuan, A. Yuille, Y. Tang, and Z. Zhou. Clip-driven universal model for organ segmentation and tumor detection. In Proceedings of the
 IEEE/CVF International Conference on Computer Vision, pages 21152–21164, 2023.
 #### Text Embedding
