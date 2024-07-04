@@ -45,9 +45,9 @@ Our used prompt embeddings are provided below. If you want to use other prompts,
 ##### Category-wise Prompt
 | Types | Download |
 | ----  |  ----  |
-| Fine-grained  | [link](https://www.dropbox.com/s/lyunaue0wwhmv5w/unet.pth) |
-| Position | [link](https://www.dropbox.com/s/jdsodw2vemsy8sz/swinunetr.pth) |
-| Category | [link](https://www.dropbox.com/s/jdsodw2vemsy8sz/swinunetr.pth) |
+| Fine-grained  | [link](https://www.dropbox.com/scl/fi/q3o4r9g3lbqpvc6mdapm8/fine_grained.pth?rlkey=2fh6sdef8pk738zsgvf641irh&st=lkr49r93&dl=0) |
+| Position | [link](https://www.dropbox.com/scl/fi/fr1ywmu3m6p8y3ktcodfc/Trauma_Position.pth?rlkey=tr4aa07jni28cwgp9bdwnwx43&st=bmhvbijs&dl=0) |
+| Category | [link](https://www.dropbox.com/scl/fi/nl9zqc5vmepco60o8thgw/Trauma_Label.pth?rlkey=u0ojv4ljtw8qzjtsy5h16gnp2&st=u7xizdhg&dl=0) |
 
 ### Training
 ```bash
