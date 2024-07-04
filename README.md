@@ -41,7 +41,7 @@ Our used prompt embeddings are provided below. If you want to use other prompts,
 ##### Organ-wise Prompt
 | Types | Download |
 | ----  |  ----  |
-| Organs  | [link](https://www.dropbox.com/s/lyunaue0wwhmv5w/unet.pth) |
+| Organs  | [link](https://www.dropbox.com/scl/fi/lkkfucxbbv355nou4qy0v/four_organ.pth?rlkey=m7o8bnngmcee83o2y17yrog4u&st=6jb9nbvj&dl=0) |
 ##### Category-wise Prompt
 | Types | Download |
 | ----  |  ----  |
