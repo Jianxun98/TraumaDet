@@ -35,7 +35,9 @@ python crop_to_size.py
 ```
 ### Preliminary
 #### Pre-train
+Our local vision encoder use pre-trained weights in **[CLIP-Driven Universal Model](https://github.com/ljwztc/CLIP-Driven-Universal-Model)**
 #### Text Embedding
+Our used prompt embeddings are provided below. If you want to use other prompts, you can follow the text encoding method in **[CLIP-Driven Universal Model](https://github.com/ljwztc/CLIP-Driven-Universal-Model)**
 ##### Organ-wise Prompt
 | Types | Download |
 | ----  |  ----  |
