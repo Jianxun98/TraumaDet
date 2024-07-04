@@ -46,6 +46,24 @@ python monai_preprocessing.py
 ```bash
 python crop_to_size.py
 ```
+#### 6. Sort out the data and code. Put all the preprocessed data (.npy.h5) like this:
+```bash
+.
+├── code
+├── models_save
+│   └── model_name.pth
+└── preprocessed_data
+    └──Global_method
+    │   ├── Patient-1.npz
+    │   └── *.npz
+    └──Local_method 
+    │   ├── Patient-1.npz
+    │   └── *.npz
+    ├──label.csv
+    ├──train_data.txt
+    ├──val_data.txt
+    └──test_data.txt 
+```
 ### Preliminary
 #### Pre-train
 Our local vision encoder use pre-trained weights [[link](https://www.dropbox.com/s/lyunaue0wwhmv5w/unet.pth)] in **[CLIP-Driven Universal Model](https://github.com/ljwztc/CLIP-Driven-Universal-Model)**
