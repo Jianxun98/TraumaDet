@@ -96,7 +96,7 @@ If this repository is useful for your research, please cite:
 ```
 @article{yu2024lelgan,
      title={Language-enhanced Local-global Aggregation Network for Multi-organ Trauma Detection},
-     author={Yu, Jianxun and Hu, Qixin and Jiang, Meirui and Wang, Yaning and Wong Chin Ting and Wang, Jing  and Zhang, Huimao and Dou, Qi},
+     author={Yu, Jianxun and Hu, Qixin and Jiang, Meirui and Wang, Yaning and Wong, Chin Ting and Wang, Jing and Zhang, Huimao and Dou, Qi},
      journal={International Conference on Medical Image Computing and Computer Assisted Intervention},
      year={2024}
    }
