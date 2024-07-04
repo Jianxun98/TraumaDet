@@ -1,8 +1,8 @@
 # Language-enhanced Local-global Aggregation Network for Multi-organ Trauma Detection
 
 ## Introduction
-Pytorch implementation for MICCAI 2024 paper **[Language-enhanced Local-global Aggregation Network for Multi-organ Trauma Detection
-](https://github.com/Jianxun98/LE-LGAN/)**
+Pytorch implementation for MICCAI 2024 paper **[Language-Enhanced Local-Global Aggregation Network for Multi-Organ Trauma Detection
+](https://github.com/Jianxun98/TraumaDet/)**
 
 <p align="center">
 <img src="./assets/main.png" alt="main" width="100%"/>
@@ -95,7 +95,7 @@ python inference_global_local.py --model_name local_prompt_global_prompt
 If this repository is useful for your research, please cite:
 ```
 @article{yu2024lelgan,
-     title={Language-enhanced Local-global Aggregation Network for Multi-organ Trauma Detection},
+     title={Language-Enhanced Local-Global Aggregation Network for Multi-Organ Trauma Detection},
      author={Yu, Jianxun and Hu, Qixin and Jiang, Meirui and Wang, Yaning and Wong, Chin Ting and Wang, Jing and Zhang, Huimao and Dou, Qi},
      journal={International Conference on Medical Image Computing and Computer Assisted Intervention},
      year={2024}
