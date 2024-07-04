@@ -13,8 +13,21 @@ Pytorch implementation for MICCAI 2024 paper **[Language-enhanced Local-global A
 ## Usage
 
 ### Setup
-
-
+```bash
+Package                Version
+---------------------- -------------------
+einops                 0.7.0
+monai                  1.3.0
+nibabel                5.2.1
+numpy                  1.23.5
+pandas                 2.0.3
+positional_encodings   6.0.3
+scikit_learn           1.3.2
+scipy                  1.13.0
+SimpleITK              2.3.1
+torch                  2.1.2
+torchvision            0.16.2
+```
 
 ### Data preparing
 #### 1. Download the RSNA-ATD dataset: https://www.kaggle.com/competitions/rsna-2023-abdominal-trauma-detection/data.
