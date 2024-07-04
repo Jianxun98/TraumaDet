@@ -46,7 +46,7 @@ python monai_preprocessing.py
 ```bash
 python crop_to_size.py
 ```
-#### 6. Sort out the data and code. Put all the preprocessed data (.npy.h5) like this:
+#### 6. Sort out the data. Put all the preprocessed data like this:
 ```bash
 .
 ├── code
