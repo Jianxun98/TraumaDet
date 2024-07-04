@@ -33,7 +33,8 @@ python monai_preprocessing.py
 ```bash
 python crop_to_size.py
 ```
-#### 6. Text Embedding
+### Preliminary
+#### Text Embedding
 ##### Organ-wise Prompt
 | Types | Download |
 | ----  |  ----  |
@@ -44,7 +45,6 @@ python crop_to_size.py
 | Fine-grained  | [link](https://www.dropbox.com/s/lyunaue0wwhmv5w/unet.pth) |
 | Position | [link](https://www.dropbox.com/s/jdsodw2vemsy8sz/swinunetr.pth) |
 | Category | [link](https://www.dropbox.com/s/jdsodw2vemsy8sz/swinunetr.pth) |
-### Pre-train
 
 ### Training
 ```bash
