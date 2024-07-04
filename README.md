@@ -92,11 +92,14 @@ python GLFF_train.py --model_name local_prompt_global_prompt --alfa 0.9 --prompt
 python inference_global_local.py --model_name local_prompt_global_prompt
 ```
 ## Citation
-@article{yu2024lelgan,
-     title={Language-enhanced Local-global Aggregation Network for Multi-organ Trauma Detection},
-     author={Yu, Jianxun and Hu, Qixin and Jiang, Meirui and Wang, Yaning and Wong Chin Ting and Wang, Jing  and Zhang, Huimao and Dou, Qi},
-     journal={International Conference on Medical Image Computing and Computer Assisted Intervention},
-     year={2024}
-   }  
+If this repository is useful for your research, please cite:
+```
+    @article{yu2024lelgan,
+         title={Language-enhanced Local-global Aggregation Network for Multi-organ Trauma Detection},
+         author={Yu, Jianxun and Hu, Qixin and Jiang, Meirui and Wang, Yaning and Wong Chin Ting and Wang, Jing  and Zhang, Huimao and Dou, Qi},
+         journal={International Conference on Medical Image Computing and Computer Assisted Intervention},
+         year={2024}
+       }
+```  
 ### Contact
 For any questions, please contact ‘jianxyu98@gmail.com’
