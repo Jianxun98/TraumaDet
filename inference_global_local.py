@@ -15,7 +15,11 @@ def _get_models(args):
 
         model = Global_with_Local_UnetClassification(out_channels = 3, local_prompt = False)
         model.load_params(torch.load(args.pretrain, map_location='cpu')['net']) # load pretrain model
-        model.load_state_dict(torch.load("/research/d1/rshr/jxyu/projects/MICCAI2024_LocalGlobal/baseline_main/runs/local_branch_network_epoch400_lr5e-4_bs4_debug/model_best.pt"))
+        _model_path = args.model_path
+        if _model_path != "":
+            model.load_state_dict(torch.load(_model_path))
+        else:
+            model.load_state_dict(torch.load("/research/d1/rshr/jxyu/projects/MICCAI2024_LocalGlobal/baseline_main/runs/local_branch_network_epoch400_lr5e-4_bs4_debug/model_best.pt"))
     
     elif args.model_name == "local_prompt_global":
 
@@ -24,7 +28,11 @@ def _get_models(args):
         word_embedding = torch.load("four_organ.pth")
         model.localbranch.organ_embedding.data = word_embedding.float()
         print('load word embedding')
-        model.load_state_dict(torch.load("/research/d1/rshr/jxyu/projects/MICCAI2024_LocalGlobal/baseline_main/runs/local_branch_network_epoch400_lr5e-4_bs4_debug/model_best.pt"))
+        _model_path = args.model_path
+        if _model_path != "":
+            model.load_state_dict(torch.load(_model_path))
+        else:
+            model.load_state_dict(torch.load("/research/d1/rshr/jxyu/projects/MICCAI2024_LocalGlobal/baseline_main/runs/local_branch_network_epoch400_lr5e-4_bs4_debug/model_best.pt"))
     
     elif args.model_name == "local_prompt_global_prompt":
 
@@ -33,7 +41,11 @@ def _get_models(args):
         word_embedding = torch.load("four_organ.pth")
         model.localbranch.organ_embedding.data = word_embedding.float()
         print('load word embedding')
-        model.load_state_dict(torch.load("/research/d1/rshr/jxyu/projects/MICCAI2024_LocalGlobal/baseline_main/runs/GLFF_eph400_lr5e-4_Sampler_Trans6_Global128_debug/model_best.pt"))
+        _model_path = args.model_path
+        if _model_path != "":
+            model.load_state_dict(torch.load(_model_path))
+        else:
+            model.load_state_dict(torch.load("/research/d1/rshr/jxyu/projects/MICCAI2024_LocalGlobal/baseline_main/runs/GLFF_eph400_lr5e-4_Sampler_Trans6_Global128_debug/model_best.pt")) #change to your model address
     
     # elif args.model_name == "local_prompt_fusion_global_prompt":
     #     model = Global_with_Local_Prompt_Fusion_UnetClassification(out_channels = 3, local_prompt = True)
@@ -69,7 +81,11 @@ def _get_models(args):
     
     elif args.model_name == "Global_Prompt":
         model = Global_Prompt(out_channels = 3)
-        model.load_state_dict(torch.load("/research/d1/rshr/jxyu/projects/MICCAI2024_LocalGlobal/baseline_main/runs/Global_Prompt/model_best.pt"))
+        _model_path = args.model_path
+        if _model_path != "":
+            model.load_state_dict(torch.load(_model_path))
+        else:
+            model.load_state_dict(torch.load("/research/d1/rshr/jxyu/projects/MICCAI2024_LocalGlobal/baseline_main/runs/Global_Prompt/model_best.pt"))
 
     else:
         raise RuntimeError("Do not support the method!")
@@ -77,13 +93,19 @@ def _get_models(args):
     return model
 
 def get_data_loader(args):
-
-    local_file_root = "/research/d1/rshr/qxhu/PublicDataset/RSNA2023/preprocessed_data/our_methods"
-    global_file_root = "/research/d1/rshr/qxhu/PublicDataset/RSNA2023/preprocessed_data/baseline_methods"
-    labels_df = pd.read_csv('/research/d1/rshr/qxhu/PublicDataset/RSNA2023/preprocessed_data/label.csv', index_col="ID")
+    local_file_root = args.local_path
+    global_file_root = args.global_path
+    label_file_root = args.label_path
+    test_list_root = args.test_list
+    # local_file_root = "/research/d1/rshr/qxhu/PublicDataset/RSNA2023/preprocessed_data/our_methods"   #change to your local_image address
+    # global_file_root = "/research/d1/rshr/qxhu/PublicDataset/RSNA2023/preprocessed_data/baseline_methods" #change to your global_image address
+    # label_file_root = "/research/d1/rshr/qxhu/PublicDataset/RSNA2023/preprocessed_data/label.csv"
+    # test_list_root = '/research/d1/rshr/jxyu/projects/MICCAI2024_LocalGlobal/data_preprocessing/test_data.txt'
+    labels_df = pd.read_csv(label_file_root, index_col="ID")
 
     val_samples   = []
-    with open('/research/d1/rshr/jxyu/projects/MICCAI2024_LocalGlobal/data_preprocessing/test_data.txt', 'r') as f:
+    
+    with open(test_list_root, 'r') as f:  #change to your test_data list address
         lines = f.readlines()
         for line in lines:
             sample = line.strip()
@@ -187,24 +209,24 @@ def cls_score(pred, label):
 
     score_table = {
         "case_acc": case_acc,
-        "case_sensitive": case_sen,
+        # "case_sensitive": case_sen,
         "case_precision": case_prec,
         "case_f1": case_f1,
         "organ_acc": organ_acc,
-        "organ_sensitive": organ_sen,
+        # "organ_sensitive": organ_sen,
         "organ_precision": organ_prec,
         "organ_f1": organ_f1,
 
         "liver_acc": liver_acc,
-        "liver_sensitive": liver_sen,
+        # "liver_sensitive": liver_sen,
         "liver_precision": liver_prec,
         "liver_f1": liver_f1,
         "spleen_acc": spleen_acc,
-        "spleen_sensitive": spleen_sen,
+        # "spleen_sensitive": spleen_sen,
         "spleen_precision": spleen_prec,
         "spleen_f1": spleen_f1,
         "kidney_acc": kidney_acc,
-        "kidney_sensitive": kidney_sen,
+        # "kidney_sensitive": kidney_sen,
         "kidney_precision": kidney_prec,
         "kidney_f1": kidney_f1
 
@@ -246,7 +268,7 @@ def inference_cls(model, val_loader, args):
 
     score, score_table = cls_score(y_pred, y_true)
     metrics = (score + score_table['organ_f1']) * 0.5
-    print("Metrics", metrics, 'Score', score, "Organ F1", score_table['organ_f1'])
+    # print("Metrics", metrics, 'Score', score, "Organ F1", score_table['organ_f1'])
     print(score_table)
 
 def main():
@@ -254,6 +276,11 @@ def main():
     import argparse
     parser = argparse.ArgumentParser(description='medical segmentation contest')
     parser.add_argument('--model_name', default="", type=str)
+    parser.add_argument('--model_path', default="", type=str)
+    parser.add_argument('--local_path', default="", type=str)
+    parser.add_argument('--global_path', default="", type=str)
+    parser.add_argument('--label_path', default="", type=str)
+    parser.add_argument('--test_list', default="", type=str)
     parser.add_argument('--resize_x', default=128, type=int)
     parser.add_argument('--resize_y', default=128, type=int)
     parser.add_argument('--resize_z', default=128, type=int)
