@@ -241,7 +241,6 @@ class Global_with_Local_noFusion(nn.Module):
 
         return out, catfeature
 
-
 class Global_with_Local_UnetClassification(nn.Module):
 
     def __init__(self, out_channels = 3, local_prompt = True, CrossAttention = True) -> None:
@@ -251,22 +250,20 @@ class Global_with_Local_UnetClassification(nn.Module):
          self.localbranch = Local_Branch_UnetClassification(out_channels, local_prompt)
          self.globalbranch = generate_model(model_depth=50, n_classes=512, input_W=128, input_H=128, input_D=128)
          self.Fusionmodule = DoubleAttention(vis_dim=512)
-         self.SingleFusionModule = SingleAttention(vis_dim=512)
-         
-         self.cls_head_crossfusion = nn.Sequential(
+        #  self.SingleFusionModule = SingleAttention(vis_dim=512)
+         self.cls_head = nn.Sequential(
             nn.Linear(in_features=1024, out_features=256),
             nn.ReLU(),
             nn.Linear(in_features=256, out_features=out_channels)
          )
-         self.cls_head_singlefusion = nn.Sequential(
-            nn.Linear(in_features=512, out_features=128),
-            nn.ReLU(),
-            nn.Linear(in_features=128, out_features=out_channels)
-         )
+        #  self.cls_head_singlefusion = nn.Sequential(
+        #     nn.Linear(in_features=512, out_features=128),
+        #     nn.ReLU(),
+        #     nn.Linear(in_features=128, out_features=out_channels)
+        #  )
     
     def load_params(self, model_dict):
         self.localbranch.load_params(model_dict)
-
 
     def forward(self, global_data, liver, spleen, left_kidney, right_kidney): 
         localfeature = self.localbranch(liver, spleen, left_kidney, right_kidney)
@@ -274,17 +271,15 @@ class Global_with_Local_UnetClassification(nn.Module):
 
         if self.CrossAttention:
             fusionfeature, alignfeature = self.Fusionmodule(localfeature, globalfeature)
-            out = self.cls_head_crossfusion(fusionfeature)
+            out = self.cls_head(fusionfeature)
 
             return out, alignfeature
 
-        else:
-            fusionfeature, alignfeature = self.SingleFusionModule(localfeature, globalfeature)
-            out = self.cls_head_singlefusion(fusionfeature)
+        # else:
+        #     fusionfeature, alignfeature = self.SingleFusionModule(localfeature, globalfeature)
+        #     out = self.cls_head_singlefusion(fusionfeature)
 
-            return out, alignfeature
-
-    
+        #     return out, alignfeature
 
 class Local_Branch_UnetClassification(nn.Module):
     def __init__(self, out_channels = 3, local_prompt = True) -> None:    ## change to 3
