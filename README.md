@@ -50,7 +50,7 @@ The category-wise prompt is exclusively involved in the training process to guid
 | Position | [link](https://www.dropbox.com/scl/fi/fr1ywmu3m6p8y3ktcodfc/Trauma_Position.pth?rlkey=tr4aa07jni28cwgp9bdwnwx43&st=bmhvbijs&dl=0) |
 | Category | [link](https://www.dropbox.com/scl/fi/nl9zqc5vmepco60o8thgw/Trauma_Label.pth?rlkey=u0ojv4ljtw8qzjtsy5h16gnp2&st=u7xizdhg&dl=0) |
 
-If you want to use other prompts, you can follow the text encoding method (e.g. **[CLIP-Driven Universal Model](https://github.com/ljwztc/CLIP-Driven-Universal-Model)**)
+If you want to design your own prompts, you can follow the text encoding method (e.g. **[CLIP-Driven Universal Model](https://github.com/ljwztc/CLIP-Driven-Universal-Model)**)
 
 ### Data preparing
 #### 1. Download the RSNA-ATD dataset: https://www.kaggle.com/competitions/rsna-2023-abdominal-trauma-detection/data.
