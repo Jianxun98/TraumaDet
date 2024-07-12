@@ -71,7 +71,7 @@ Our local vision encoder use pre-trained weights [[link](https://www.dropbox.com
 [2] J. Liu, Y. Zhang, J. Chen, J. Xiao, Y. Lu, B. Landman, Y. Yuan, A. Yuille, Y. Tang, and Z. Zhou. Clip-driven universal model for organ segmentation and tumor detection. In Proceedings of the
 IEEE/CVF International Conference on Computer Vision, pages 21152–21164, 2023.
 #### Text Embedding
-Our used prompt embeddings are provided below. 
+Our used prompt embeddings consists of **Organ-wise Prompt** and **Category-wise Prompt**
 
 ##### Organ-wise Prompt (Used In Training and Inference Stages)
 The organ-wise prompt is used in training and inference stages, it is composed of specific organ names with the medical template, as shown in the above figure.
