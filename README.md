@@ -72,11 +72,11 @@ Our local vision encoder use pre-trained weights [[link](https://www.dropbox.com
 IEEE/CVF International Conference on Computer Vision, pages 21152–21164, 2023.
 #### Text Embedding
 Our used prompt embeddings are provided below. If you want to use other prompts, you can follow the text encoding method (e.g. **[CLIP-Driven Universal Model](https://github.com/ljwztc/CLIP-Driven-Universal-Model)**)
-##### Organ-wise Prompt
+##### Organ-wise Prompt (Used In Training and Inference Stage)
 | Types | Download |
 | ----  |  ----  |
 | Organs  | [link](https://www.dropbox.com/scl/fi/lkkfucxbbv355nou4qy0v/four_organ.pth?rlkey=m7o8bnngmcee83o2y17yrog4u&st=6jb9nbvj&dl=0) |
-##### Category-wise Prompt
+##### Category-wise Prompt (Used in Training Stage)
 | Types | Download |
 | ----  |  ----  |
 | Fine-grained  | [link](https://www.dropbox.com/scl/fi/q3o4r9g3lbqpvc6mdapm8/fine_grained.pth?rlkey=2fh6sdef8pk738zsgvf641irh&st=lkr49r93&dl=0) |
