@@ -33,7 +33,7 @@ torchvision            0.16.2
 #### Pre-train
 Our local vision encoder use pre-trained weights [[link](https://www.dropbox.com/s/lyunaue0wwhmv5w/unet.pth)] in **[CLIP-Driven Universal Model](https://github.com/ljwztc/CLIP-Driven-Universal-Model)**. Please download it before running the code.
 
-[2] J. Liu, Y. Zhang, J. Chen, J. Xiao, Y. Lu, B. Landman, Y. Yuan, A. Yuille, Y. Tang, and Z. Zhou. Clip-driven universal model for organ segmentation and tumor detection. In Proceedings of the
+[1] J. Liu, Y. Zhang, J. Chen, J. Xiao, Y. Lu, B. Landman, Y. Yuan, A. Yuille, Y. Tang, and Z. Zhou. Clip-driven universal model for organ segmentation and tumor detection. In Proceedings of the
 IEEE/CVF International Conference on Computer Vision, pages 21152–21164, 2023.
 #### Text Embedding
 Our used text embeddings consists of **Organ-wise Prompt** and **Category-wise Prompt** embeddings. Please download them at appropriate stages.
@@ -59,7 +59,7 @@ If you want to use other prompts, you can follow the text encoding method (e.g. 
 python dicom2nii.py
 ```
 #### 3. Train a segmentation model (e.g. **[TransUnet](https://github.com/Beckschen/TransUNet)**) to obtain all segmentation maps of organs.
-[1] J. Chen, Y. Lu, Q. Yu, X. Luo, E. Adeli, Y. Wang, L. Lu, A. Yuille, and Y. Zhou. Transunet: Transformers make strong
+[2] J. Chen, Y. Lu, Q. Yu, X. Luo, E. Adeli, Y. Wang, L. Lu, A. Yuille, and Y. Zhou. Transunet: Transformers make strong
 encoders for medical image segmentation. arXiv preprint arXiv:2102.04306, 2021.
 #### 4. Data preprocessing
 ```bash
