@@ -71,9 +71,8 @@ Our local vision encoder use pre-trained weights [[link](https://www.dropbox.com
 [2] J. Liu, Y. Zhang, J. Chen, J. Xiao, Y. Lu, B. Landman, Y. Yuan, A. Yuille, Y. Tang, and Z. Zhou. Clip-driven universal model for organ segmentation and tumor detection. In Proceedings of the
 IEEE/CVF International Conference on Computer Vision, pages 21152–21164, 2023.
 #### Text Embedding
-Our used prompt embeddings are provided below. The organ-wise prompt is used in training and inference stages， it is composed of specific organ names with the medical template, as shown in the above figure.
-The category-wise prompt is exclusively involved in the training process to guide the predictions,  it’s generated according to the label and has a similar template to the organ-wise prompt.
-If you want to use other prompts, you can follow the text encoding method (e.g. **[CLIP-Driven Universal Model](https://github.com/ljwztc/CLIP-Driven-Universal-Model)**)
+Our used prompt embeddings are provided below. The organ-wise prompt is used in training and inference stages, it is composed of specific organ names with the medical template, as shown in the above figure.
+The category-wise prompt is exclusively involved in the training process to guide the predictions, it's generated according to the label and has a similar template to the organ-wise prompt. We test three types of prompts: Fine-grained, Position, and Category, and select the Category type as the prompt.
 ##### Organ-wise Prompt (Used In Training and Inference Stages)
 | Types | Download |
 | ----  |  ----  |
@@ -84,7 +83,7 @@ If you want to use other prompts, you can follow the text encoding method (e.g. 
 | Fine-grained  | [link](https://www.dropbox.com/scl/fi/q3o4r9g3lbqpvc6mdapm8/fine_grained.pth?rlkey=2fh6sdef8pk738zsgvf641irh&st=lkr49r93&dl=0) |
 | Position | [link](https://www.dropbox.com/scl/fi/fr1ywmu3m6p8y3ktcodfc/Trauma_Position.pth?rlkey=tr4aa07jni28cwgp9bdwnwx43&st=bmhvbijs&dl=0) |
 | Category | [link](https://www.dropbox.com/scl/fi/nl9zqc5vmepco60o8thgw/Trauma_Label.pth?rlkey=u0ojv4ljtw8qzjtsy5h16gnp2&st=u7xizdhg&dl=0) |
-
+If you want to use other prompts, you can follow the text encoding method (e.g. **[CLIP-Driven Universal Model](https://github.com/ljwztc/CLIP-Driven-Universal-Model)**)
 ### Training
 ```bash
 python GLFF_train.py --model_name local_prompt_global_prompt --alfa 0.9 --prompt_loss True
