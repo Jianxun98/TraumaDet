@@ -66,12 +66,12 @@ python crop_to_size.py
 ```
 ### Preliminary
 #### Pre-train
-Our local vision encoder use pre-trained weights [[link](https://www.dropbox.com/s/lyunaue0wwhmv5w/unet.pth)] in **[CLIP-Driven Universal Model](https://github.com/ljwztc/CLIP-Driven-Universal-Model)**
+Our local vision encoder use pre-trained weights [[link](https://www.dropbox.com/s/lyunaue0wwhmv5w/unet.pth)] in **[CLIP-Driven Universal Model](https://github.com/ljwztc/CLIP-Driven-Universal-Model)**. Please download it before running the code.
 
 [2] J. Liu, Y. Zhang, J. Chen, J. Xiao, Y. Lu, B. Landman, Y. Yuan, A. Yuille, Y. Tang, and Z. Zhou. Clip-driven universal model for organ segmentation and tumor detection. In Proceedings of the
 IEEE/CVF International Conference on Computer Vision, pages 21152–21164, 2023.
 #### Text Embedding
-Our used text embeddings consists of **Organ-wise Prompt** and **Category-wise Prompt** embeddings.
+Our used text embeddings consists of **Organ-wise Prompt** and **Category-wise Prompt** embeddings. Please download them at appropriate stages.
 ##### Organ-wise Prompt (Used In Training and Inference Stages)
 The organ-wise prompt is used in training and inference stages, it is composed of specific organ names with the medical template, as shown in the main figure.
 | Types | Download |
