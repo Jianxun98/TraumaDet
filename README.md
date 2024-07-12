@@ -79,9 +79,9 @@ python crop_to_size.py
 │   │   └── models_save
 │   │   │   └── model_*.pth
 │   ...
-│   ├── unet.pth
-│   ├── four_organ.pth
-│   └── Trauma_Label.pth
+│   ├── unet.pth (pre-trained local vision encoder weights)
+│   ├── four_organ.pth (organ-wise prompt embedding)
+│   └── Trauma_Label.pth (category-wise prompt embedding)
 └── preprocessed_data
     └──Global_method
     │   ├── Patient-1.npz
