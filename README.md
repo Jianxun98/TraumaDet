@@ -73,8 +73,9 @@ python crop_to_size.py
 ```bash
 .
 ├── code
-├── models_save
-│   └── model_name.pth
+│   ├── runs
+│   ├── four_organ.pth
+│   └── Trauma_Label.pth
 └── preprocessed_data
     └──Global_method
     │   ├── Patient-1.npz
