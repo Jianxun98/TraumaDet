@@ -71,15 +71,14 @@ Our local vision encoder use pre-trained weights [[link](https://www.dropbox.com
 [2] J. Liu, Y. Zhang, J. Chen, J. Xiao, Y. Lu, B. Landman, Y. Yuan, A. Yuille, Y. Tang, and Z. Zhou. Clip-driven universal model for organ segmentation and tumor detection. In Proceedings of the
 IEEE/CVF International Conference on Computer Vision, pages 21152–21164, 2023.
 #### Text Embedding
-Our used prompt embeddings consists of **Organ-wise Prompt** and **Category-wise Prompt**
-
+Our used prompt embeddings consists of **Organ-wise Prompt** and **Category-wise Prompt**.
 ##### Organ-wise Prompt (Used In Training and Inference Stages)
-The organ-wise prompt is used in training and inference stages, it is composed of specific organ names with the medical template, as shown in the above figure.
+The organ-wise prompt is used in training and inference stages, it is composed of specific organ names with the medical template, as shown in the main figure.
 | Types | Download |
 | ----  |  ----  |
 | Organs  | [link](https://www.dropbox.com/scl/fi/lkkfucxbbv355nou4qy0v/four_organ.pth?rlkey=m7o8bnngmcee83o2y17yrog4u&st=6jb9nbvj&dl=0) |
 ##### Category-wise Prompt (Used in Training Stage)
-The category-wise prompt is exclusively involved in the training process to guide the predictions, it's generated according to the label and has a similar template to the organ-wise prompt. We test three types of prompts: Fine-grained, Position, and Category, and select the Category type as the prompt.
+The category-wise prompt is exclusively involved in the training process to guide the predictions, it's generated according to the label and has a similar template to the organ-wise prompt. We test three types of prompts: Fine-grained, Position, and Category, which are listed below. We select the Category type prompt finally, as shown in the main Figure.
 | Types | Download |
 | ----  |  ----  |
 | Fine-grained  | [link](https://www.dropbox.com/scl/fi/q3o4r9g3lbqpvc6mdapm8/fine_grained.pth?rlkey=2fh6sdef8pk738zsgvf641irh&st=lkr49r93&dl=0) |
