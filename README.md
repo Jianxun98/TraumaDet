@@ -69,7 +69,7 @@ python monai_preprocessing.py
 ```bash
 python crop_to_size.py
 ```
-#### 6. Sort out the data. Put all the preprocessed data like this:
+#### 6. Sort out documents. Put all the preprocessed data and .pth files like this:
 ```bash
 .
 ├── code
