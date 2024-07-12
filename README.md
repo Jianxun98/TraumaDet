@@ -29,6 +29,29 @@ torch                  2.1.2
 torchvision            0.16.2
 ```
 
+### Preliminary
+#### Pre-train
+Our local vision encoder use pre-trained weights [[link](https://www.dropbox.com/s/lyunaue0wwhmv5w/unet.pth)] in **[CLIP-Driven Universal Model](https://github.com/ljwztc/CLIP-Driven-Universal-Model)**. Please download it before running the code.
+
+[2] J. Liu, Y. Zhang, J. Chen, J. Xiao, Y. Lu, B. Landman, Y. Yuan, A. Yuille, Y. Tang, and Z. Zhou. Clip-driven universal model for organ segmentation and tumor detection. In Proceedings of the
+IEEE/CVF International Conference on Computer Vision, pages 21152–21164, 2023.
+#### Text Embedding
+Our used text embeddings consists of **Organ-wise Prompt** and **Category-wise Prompt** embeddings. Please download them at appropriate stages.
+##### Organ-wise Prompt (Used In Training and Inference Stages)
+The organ-wise prompt is used in training and inference stages, it is composed of specific organ names with the medical template, as shown in the main figure.
+| Types | Download |
+| ----  |  ----  |
+| Organs  | [link](https://www.dropbox.com/scl/fi/lkkfucxbbv355nou4qy0v/four_organ.pth?rlkey=m7o8bnngmcee83o2y17yrog4u&st=6jb9nbvj&dl=0) |
+##### Category-wise Prompt (Used in Training Stage)
+The category-wise prompt is exclusively involved in the training process to guide the predictions, it's generated according to the label and has a similar template to the organ-wise prompt. We test three types of prompts: Fine-grained, Position, and Category, which are listed below. We select the Category type prompt finally, as shown in the main Figure.
+| Types | Download |
+| ----  |  ----  |
+| Fine-grained  | [link](https://www.dropbox.com/scl/fi/q3o4r9g3lbqpvc6mdapm8/fine_grained.pth?rlkey=2fh6sdef8pk738zsgvf641irh&st=lkr49r93&dl=0) |
+| Position | [link](https://www.dropbox.com/scl/fi/fr1ywmu3m6p8y3ktcodfc/Trauma_Position.pth?rlkey=tr4aa07jni28cwgp9bdwnwx43&st=bmhvbijs&dl=0) |
+| Category | [link](https://www.dropbox.com/scl/fi/nl9zqc5vmepco60o8thgw/Trauma_Label.pth?rlkey=u0ojv4ljtw8qzjtsy5h16gnp2&st=u7xizdhg&dl=0) |
+
+If you want to use other prompts, you can follow the text encoding method (e.g. **[CLIP-Driven Universal Model](https://github.com/ljwztc/CLIP-Driven-Universal-Model)**)
+
 ### Data preparing
 #### 1. Download the RSNA-ATD dataset: https://www.kaggle.com/competitions/rsna-2023-abdominal-trauma-detection/data.
 #### 2. Transfer multiple 2D dicom images of the same case to 3D Nifti volumes.
@@ -64,28 +87,6 @@ python crop_to_size.py
     ├──val_data.txt
     └──test_data.txt 
 ```
-### Preliminary
-#### Pre-train
-Our local vision encoder use pre-trained weights [[link](https://www.dropbox.com/s/lyunaue0wwhmv5w/unet.pth)] in **[CLIP-Driven Universal Model](https://github.com/ljwztc/CLIP-Driven-Universal-Model)**. Please download it before running the code.
-
-[2] J. Liu, Y. Zhang, J. Chen, J. Xiao, Y. Lu, B. Landman, Y. Yuan, A. Yuille, Y. Tang, and Z. Zhou. Clip-driven universal model for organ segmentation and tumor detection. In Proceedings of the
-IEEE/CVF International Conference on Computer Vision, pages 21152–21164, 2023.
-#### Text Embedding
-Our used text embeddings consists of **Organ-wise Prompt** and **Category-wise Prompt** embeddings. Please download them at appropriate stages.
-##### Organ-wise Prompt (Used In Training and Inference Stages)
-The organ-wise prompt is used in training and inference stages, it is composed of specific organ names with the medical template, as shown in the main figure.
-| Types | Download |
-| ----  |  ----  |
-| Organs  | [link](https://www.dropbox.com/scl/fi/lkkfucxbbv355nou4qy0v/four_organ.pth?rlkey=m7o8bnngmcee83o2y17yrog4u&st=6jb9nbvj&dl=0) |
-##### Category-wise Prompt (Used in Training Stage)
-The category-wise prompt is exclusively involved in the training process to guide the predictions, it's generated according to the label and has a similar template to the organ-wise prompt. We test three types of prompts: Fine-grained, Position, and Category, which are listed below. We select the Category type prompt finally, as shown in the main Figure.
-| Types | Download |
-| ----  |  ----  |
-| Fine-grained  | [link](https://www.dropbox.com/scl/fi/q3o4r9g3lbqpvc6mdapm8/fine_grained.pth?rlkey=2fh6sdef8pk738zsgvf641irh&st=lkr49r93&dl=0) |
-| Position | [link](https://www.dropbox.com/scl/fi/fr1ywmu3m6p8y3ktcodfc/Trauma_Position.pth?rlkey=tr4aa07jni28cwgp9bdwnwx43&st=bmhvbijs&dl=0) |
-| Category | [link](https://www.dropbox.com/scl/fi/nl9zqc5vmepco60o8thgw/Trauma_Label.pth?rlkey=u0ojv4ljtw8qzjtsy5h16gnp2&st=u7xizdhg&dl=0) |
-
-If you want to use other prompts, you can follow the text encoding method (e.g. **[CLIP-Driven Universal Model](https://github.com/ljwztc/CLIP-Driven-Universal-Model)**)
 
 ### Training
 ```bash
