@@ -73,12 +73,12 @@ python crop_to_size.py
 ```bash
 .
 ├── code
-│   ├── ...
 │   ├── dataset
 │   ├── models
 │   ├── runs
 │   │   └── models_save
 │   │   │   └── model_*.pth
+│   ...
 │   ├── unet.pth
 │   ├── four_organ.pth
 │   └── Trauma_Label.pth
