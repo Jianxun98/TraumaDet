@@ -76,9 +76,12 @@ python crop_to_size.py
 │   ├── dataset
 │   ├── models
 │   ├── runs
-│   │   └── models_save
-│   │   │   └── model_*.pth
+│   │   └── our_checkpoints
 │   ...
+│   ├── label.csv
+│   ├── train_data.txt
+│   ├── val_data.txt
+│   ├── test_data.txt 
 │   ├── unet.pth (pre-trained weights)
 │   ├── four_organ.pth (organ-wise prompt embedding)
 │   └── Trauma_Label.pth (category-wise prompt embedding)
@@ -87,12 +90,8 @@ python crop_to_size.py
     │   ├── Patient-1.npz
     │   └── *.npz
     └──Local_method 
-    │   ├── Patient-1.npz
-    │   └── *.npz
-    ├──label.csv
-    ├──train_data.txt
-    ├──val_data.txt
-    └──test_data.txt 
+        ├── Patient-1.npz
+        └── *.npz
 ```
 
 ### Training
