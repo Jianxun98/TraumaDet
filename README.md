@@ -99,6 +99,7 @@ python crop_to_size.py
 python GLFF_train.py --model_name local_prompt_global_prompt --alfa 0.9 --prompt_loss True
 ```
 ### Testing
+If you want to reproduce our experiment result, you can use our model weights [[link](https://www.dropbox.com/scl/fo/xeql0l62437o67otdprhh/AI225To5VBSlwGjVSwX9qlA?rlkey=wjkyvg1t3970qf9lffunarw5j&st=5z991owg&dl=0)], and run the command below:
 ```bash
 python inference_global_local.py --model_name local_prompt_global_prompt \
 --model_path "./runs/our_checkpoints/model_best.pt" \
