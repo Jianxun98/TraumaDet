@@ -101,7 +101,12 @@ python GLFF_train.py --model_name local_prompt_global_prompt --alfa 0.9 --prompt
 ```
 ### Testing
 ```bash
-python inference_global_local.py --model_name local_prompt_global_prompt
+python inference_global_local.py --model_name local_prompt_global_prompt \
+--model_path "./runs/our_checkpoints/local_prompt_global_prompt/model_best.pt" \
+--local_path "/research/d1/rshr/qxhu/PublicDataset/Jianxun/our_methods" \
+--global_path "/research/d1/rshr/qxhu/PublicDataset/Jianxun/baseline_methods" \
+--label_path "./label.csv" \
+--test_list "./test_data.txt"
 ```
 ## Citation
 If this repository is useful for your research, please cite:
